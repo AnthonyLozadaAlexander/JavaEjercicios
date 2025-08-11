@@ -8,6 +8,8 @@ public class Main {
         double area = 0.0;
 
         area = triangulo[0].obtenerArea();
+        // el iterador comienza en 1 , dado que se utiliza el primer elemento como
+        // referencia en el area
         for (int i = 1; i < triangulo.length; i++) {
             if (triangulo[i].obtenerArea() > area) {
                 area = triangulo[i].obtenerArea();
@@ -22,6 +24,8 @@ public class Main {
         double area = 0.0;
         int index = 0;
         area = triangulo[0].obtenerArea();
+        // el iterador comienza en 1 , dado que se utiliza el primer elemento como
+        // referencia en el area
         for (int i = 1; i < triangulo.length; i++) {
             if (triangulo[i].obtenerArea() > area) {
                 area = triangulo[i].obtenerArea();
