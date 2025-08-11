@@ -45,12 +45,19 @@ public class Main {
         Triangulo_Isosceles triangulo[] = new Triangulo_Isosceles[nTriangulos];
         for (int i = 0; i < nTriangulos; i++) {
             input.nextLine();
+
+            System.out.println("-----------------------------------------------");
             System.out.println("Ingrese la base del triángulo [" + (i) + "]:");
             base = input.nextDouble();
             System.out.println("Ingrese el lado del triángulo [" + (i) + "]:");
             lado = input.nextDouble();
+            System.out.println("-----------------------------------------------");
 
             triangulo[i] = new Triangulo_Isosceles(base, lado);
+            System.out.println("El perimetro del triangulo es: " + triangulo[i].obtenerPerimetro());
+            System.out.println("El area del triangulo es: " + triangulo[i].obtenerArea());
+
+            System.out.println("-----------------------------------------------");
         }
 
         System.out.println("-----------------------------------");
@@ -62,6 +69,8 @@ public class Main {
         System.out.println("-----------------------------------");
         System.out.println("El area mayor es: " + obtenerAreaMayor(triangulo));
         System.out.println("-----------------------------------");
+
+        input.close();
 
     }
 
