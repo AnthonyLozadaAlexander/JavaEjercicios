@@ -4,11 +4,25 @@ import java.util.Scanner;
 
 public class Main {
 
+    public static double obtenerAreaMayor(Triangulo_Isosceles triangulo[]) {
+        double area = 0.0;
+
+        area = triangulo[0].obtenerArea();
+        for (int i = 1; i < triangulo.length; i++) {
+            if (triangulo[i].obtenerArea() > area) {
+                area = triangulo[i].obtenerArea();
+            }
+
+        }
+
+        return area;
+    }
+
     public static int indexAreaMayorS(Triangulo_Isosceles triangulo[]) {
         double area = 0.0;
         int index = 0;
         area = triangulo[0].obtenerArea();
-        for (int i = 0; i < triangulo.length; i++) {
+        for (int i = 1; i < triangulo.length; i++) {
             if (triangulo[i].obtenerArea() > area) {
                 area = triangulo[i].obtenerArea();
                 index = i;
