@@ -55,9 +55,14 @@ public class Main {
 
         System.out.println("-----------------------------------");
         indexAreaMayorSuperficie = indexAreaMayorS(triangulo);
-        System.out
-                .println("El triangulo de mayor superficie es: \n" + "Triangulo[" + indexAreaMayorSuperficie + "] \n" +
-                        triangulo[indexAreaMayorSuperficie].mostrarDatos());
+        System.out.println("El triangulo de mayor superficie es: \n"
+                + "Triangulo[" + indexAreaMayorSuperficie + "] \n" +
+                triangulo[indexAreaMayorSuperficie].mostrarDatos());
+
+        System.out.println("-----------------------------------");
+        System.out.println("El area mayor es: " + obtenerAreaMayor(triangulo));
+        System.out.println("-----------------------------------");
+
     }
 
 }
