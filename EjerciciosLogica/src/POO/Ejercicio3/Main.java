@@ -58,6 +58,7 @@ public class Main {
             System.out.println("El area del triangulo es: " + triangulo[i].obtenerArea());
 
             System.out.println("-----------------------------------------------");
+
         }
 
         System.out.println("-----------------------------------");
