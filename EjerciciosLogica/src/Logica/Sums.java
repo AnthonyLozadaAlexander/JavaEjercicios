@@ -47,12 +47,16 @@ public class Sums {
                 System.out.print(elements + ", ");
             }
         }
+    
+        int suma = sumaArray(arr);
+        System.out.println("\nFuncion sumaArray = " + suma);
+            
 
         for (int i = 0; i < arr.length - 1; i++) {
             int diferencia = arr[i] - arr[i + 1];
             sum = sum + diferencia;
             if (sum == target) {
-                System.out.println("\nSuma total: " + sum);
+                System.out.println("Suma total: " + sum);
             }
         }
 
