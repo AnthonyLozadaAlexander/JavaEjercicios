@@ -5,8 +5,9 @@ import java.util.Scanner;
 public class Negocio {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        int codigo = 0, precioU = 0, cantidadC = 0, cantidadL = 0, cantidadB = 0, cantidadR = 0, pagarC = 0, pagarL = 0,
-                pagarB = 0, pagarR = 0, cantidadAr = 0;
+        int codigo = 0, precioU = 0, cantidadC = 0, cantidadL = 0, cantidadB = 0, cantidadR = 0, cantidadAr = 0;
+        double pagarC = 0, pagarL = 0, pagarB = 0, pagarR = 0, pagarBEs = 0;
+
         double totalPagar = 0.0;
         System.out.println("----------------------------------------------------");
         System.out.println("            Bienvenido al Sistema De Ventas");
@@ -29,8 +30,8 @@ public class Negocio {
                     System.out.print("Ingrese la cantidad de unidades: ");
                     cantidadC = input.nextInt();
                     pagarC += precioU * cantidadC;
-
                     break;
+                    
                 case 2:
                     precioU = 7;
                     int cantidadCajas = 0;
@@ -50,15 +51,19 @@ public class Negocio {
                     } else {
                         System.out.println("ERROR: Opcion no valida");
                     }
-
                     break;
+
                 case 3:
                     precioU = 10;
                     System.out.println("Producto Elegido: Borrador");
                     System.out.print("Ingrese la cantidad de unidades: ");
                     cantidadB = input.nextInt();
-                    pagarB += precioU * cantidadB;
-
+                    if (cantidadB > 10) {
+                        System.out.println("Descuento Especial 10%");
+                        pagarBEs = pagarBEs + (pagarB - (pagarB * 0.10));
+                    } else {
+                        pagarB += precioU * cantidadB;
+                    }
                     break;
 
                 case 4:
@@ -67,16 +72,16 @@ public class Negocio {
                     System.out.print("Ingrese la cantidad de unidades: ");
                     cantidadR = input.nextInt();
                     pagarR += precioU * cantidadR;
-
                     break;
+
                 default:
                     System.out.println("ERROR: Codigo No Identificado");
                     break;
-
             }
             count++;
         } while (count < cantidadAr);
-        totalPagar = pagarC + pagarL + pagarB + pagarR;
+
+        totalPagar = pagarC + pagarL + pagarB + pagarR + pagarBEs;
         System.out.println("----------------------------------------------------");
         System.out.println("               Productos Escogidos: ");
         System.out.println("----------------------------------------------------");
