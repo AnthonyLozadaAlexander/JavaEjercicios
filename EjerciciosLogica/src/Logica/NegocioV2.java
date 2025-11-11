@@ -12,7 +12,8 @@ public class NegocioV2 {
         System.out.println("          Bienvenido al Sistema De Ventas");
         System.out.println("----------------------------------------------------");
         System.out
-                .println("Codigo 1: Cuaderno 10$" + "\n" + "Codigo 2: Lapiz $7 " + "\n" + "Codigo 3: Borrador $3" + "\n"
+                .println("Codigo 1: Cuaderno 10$" + "\n" + "Codigo 2: Lapiz: $7 - Caja De Lapices 10 Unidades: 65$"
+                        + "\n" + "Codigo 3: Borrador $3" + "\n"
                         + "Codigo 4: Resaltador $1");
         System.out.println("----------------------------------------------------");
         System.out.print("Ingrese El Codigo Del Producto: ");
