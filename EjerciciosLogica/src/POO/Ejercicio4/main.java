@@ -14,7 +14,6 @@ public class main {
     }
 
     public static void agregar() {
-        Scanner input = new Scanner(System.in);
 
         System.out.println("------------------------------------------------");
         System.out.println("Bienvenido Al Sistema de Registro de Estudiantes");
@@ -54,23 +53,21 @@ public class main {
         for (Estudiante dato : EstudianteList) {
             System.out.println(dato.mostrarInfo());
         }
-        input.close();
-        main(null);
 
     }
 
     public static void modificar() {
 
-        int index = 0;
-        boolean continuar = true;
-        System.out.println("Modificar Listas Estudiantes");
         if (EstudianteList.isEmpty()) {
             System.out.println("No Hay Estudiantes Registrados");
             return;
         }
 
+        int index = 0;
+        boolean continuar = true;
+        System.out.println("Modificar Listas Estudiantes");
+
         do {
-            input.next();
             System.out.println("Ingrese El Nombre Del Estudiante A Modificar: ");
             String nombreBuscado = input.nextLine();
             for (int i = 0; i < EstudianteList.size(); i++) {
@@ -81,44 +78,46 @@ public class main {
                     String nuevoNombre = input.nextLine();
                     EstudianteList.get(index).setNombre(nuevoNombre);
                     continuar = false;
-                    break;
                 }
             }
 
         } while (continuar == true);
-        System.out.println("Nombre Actualizado: ");
+        System.out.println("-------------------------------------------------");
+        System.out.println("              Nombre Actualizado: ");
         System.out.println("Index[" + index + "]");
         System.out.println("Nombre: " + EstudianteList.get(index).getNombre());
-        input.close();
+        System.out.println("-------------------------------------------------");
 
     }
 
     public static void main(String[] args) {
+        boolean continuar = true;
+        do {
+            System.out.println("------------------------------------------------");
+            System.out.println("       Sistema De Registro De Estudiantes");
+            System.out.println("------------------------------------------------");
+            System.out.println("1 = Agregar");
+            System.out.println("2 = Modificar");
+            System.out.println("3 = Buscar");
+            System.out.println("4 = Eliminar");
+            System.out.println("5 = Salir");
+            System.out.println("------------------------------------------------");
 
-        System.out.println("------------------------------------------------");
-        System.out.println("       Sistema De Registro De Estudiantes");
-        System.out.println("------------------------------------------------");
-        System.out.println("1 = Agregar");
-        System.out.println("2 = Modificar");
-        System.out.println("3 = Buscar");
-        System.out.println("4 = Eliminar");
-        System.out.println("5 = Salir");
-        System.out.println("------------------------------------------------");
-        
-        switch (input.nextLine()) {
-            case "1" -> agregar();
-                
-                
-            case "2" -> modificar();
-                
+            switch (input.nextLine()) {
+                case "1" -> agregar();
 
-            case "5" -> System.out.println("Gracias Por Usar El Sistema"); 
-                
-                
-            default -> System.out.println("Opcion No Valida"); 
-                
+                case "2" -> modificar();
 
-        }
+                case "5" -> {
+                    System.out.println("Gracias Por Usar El Sistema");
+                    continuar = false;
+                }
+
+                default -> System.out.println("Opcion No Valida");
+
+            }
+        } while (continuar == true);
+        input.close();
 
     }
 }
