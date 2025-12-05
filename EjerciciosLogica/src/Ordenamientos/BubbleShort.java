@@ -22,7 +22,16 @@ public class BubbleShort {
         lista.add(5);
         lista.add(1);
         lista.add(4);
+        System.out.println("Lista Original:");
+        for (int dato : lista) {
+            System.out.print(dato);
+        }
         ordenarList(lista);
+
+        System.out.println("\nLista Ordenada:");
+        for (int dato : lista) {
+            System.out.println(dato);
+        }
     }
 
 }
