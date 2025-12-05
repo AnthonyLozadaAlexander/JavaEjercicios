@@ -51,10 +51,7 @@ public class main {
         System.out.println("           Estudiantes Registrados");
         System.out.println("------------------------------------------------");
         for (Estudiante dato : EstudianteList) {
-            System.out.println(dato.getNombre() + "\n"
-                    + dato.getEdad() + "\n"
-                    + dato.getCarrera() + "\n");
-
+            System.out.println(dato.mostrarInfo());
         }
     }
 
@@ -86,6 +83,7 @@ public class main {
 
         } while (continuar == true);
         System.out.println("Nombre Actualizado: ");
+        System.out.println("Index[" + index + "]");
         System.out.println("Nombre: " + EstudianteList.get(index).getNombre());
         input.close();
 
@@ -94,12 +92,15 @@ public class main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        System.out.println("Menu");
+        System.out.println("------------------------------------------------");
+        System.out.println("       Sistema De Registro De Estudiantes");
+        System.out.println("------------------------------------------------");
         System.out.println("1 = Agregar");
         System.out.println("2 = Modificar");
         System.out.println("3 = Buscar");
         System.out.println("4 = Eliminar");
         System.out.println("5 = Salir");
+        System.out.println("------------------------------------------------");
         switch (input.nextLine()) {
             case "1":
                 agregar();
