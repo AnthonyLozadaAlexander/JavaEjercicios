@@ -90,6 +90,35 @@ public class main {
 
     }
 
+    public static void buscar() {
+        if (EstudianteList.isEmpty()) {
+            System.out.println("No Hay Estudiantes Registrados");
+            return;
+        }
+
+        int index = 0;
+        boolean continuar = true;
+        System.out.println("Buscar Listas Estudiantes");
+
+        do {
+            System.out.println("Ingrese El Nombre Del Estudiante A Buscar");
+            String nombreBuscado = input.nextLine();
+            for (int i = 0; i < EstudianteList.size(); i++) {
+                if (nombreBuscado.equalsIgnoreCase(EstudianteList.get(i).getNombre())) {
+                    index = i;
+                    System.out.println("Estudiante Encontrado: ");
+                }
+            }
+        } while (continuar == true);
+    }
+
+    public static void eliminar() {
+        if (EstudianteList.isEmpty()) {
+            System.out.println("No Hay Estudiantes Registrados");
+            return;
+        }
+    }
+
     public static void main(String[] args) {
         boolean continuar = true;
         do {
@@ -107,6 +136,10 @@ public class main {
                 case "1" -> agregar();
 
                 case "2" -> modificar();
+
+                case "3" -> buscar();
+
+                case "4" -> eliminar();
 
                 case "5" -> {
                     System.out.println("Gracias Por Usar El Sistema");
