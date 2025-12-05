@@ -3,7 +3,7 @@ package POO.Ejercicio4;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class main {
+public class Main {
     static ArrayList<Estudiante> EstudianteList = new ArrayList<>();
 
     public static void agregarEstudiante(ArrayList<Estudiante> listaEstudiantes, String nombre, int edad,
@@ -58,7 +58,7 @@ public class main {
         }
     }
 
-    public void modificar() {
+    public static void modificar() {
         System.out.println("Modificar Listas Estudiantes");
         int index = 0;
         System.out.println("Ingrese El Indice Del Estudiante A Modificar");
@@ -66,9 +66,34 @@ public class main {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        String opcion = "";
 
-        agregar();
+        System.out.println("Menu");
+        System.out.println("1 = Agregar");
+        System.out.println("2 = Modificar");
+        System.out.println("3 = Buscar");
+        System.out.println("4 = Eliminar");
+        System.out.println("5 = Salir");
+        switch (input.nextLine()) {
+            case "1":
+                agregar();
+                break;
+            case "2":
+                modificar();
+                break;
+            case "3":
+
+                break;
+            case "4":
+
+                break;
+
+            case "5":
+                System.out.println("Gracias Por Usar El Sistema");
+                break;
+            default:
+                System.out.println("Opcion No Valida");
+
+        }
 
     }
 }
