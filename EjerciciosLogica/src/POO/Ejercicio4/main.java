@@ -138,6 +138,37 @@ public class main {
             System.out.println("No Hay Estudiantes Registrados");
             return;
         }
+
+        int index = 0;
+        boolean continuar = true;
+        System.out.println("-------------------------------------------------");
+        System.out.println("           Eliminar Listas Estudiantes");
+        System.out.println("-------------------------------------------------\n");
+        do {
+            System.out.println("-------------------------------------------------");
+            System.out.println("   Ingrese El Nombre Del Estudiante A Eliminar");
+            System.out.println("-------------------------------------------------");
+            String nombreBuscado = input.nextLine();
+            for (int i = 0; i < EstudianteList.size(); i++) {
+                if (nombreBuscado.equalsIgnoreCase(EstudianteList.get(i).getNombre())) {
+                    index = i;
+                    System.out.println("Estudiante Eliminado: \n" +
+                            EstudianteList.get(index).mostrarInfo());
+                    EstudianteList.remove(index);
+                } else {
+                    System.out.println("-------------------------------------------------");
+                    System.out.println("Estudiante No Encontrado");
+                    System.out.println("-------------------------------------------------");
+                }
+            }
+        } while (continuar == true);
+
+        System.out.println("-------------------------------------------------");
+        System.out.println("         Lista Actualizada De Estudiantes");
+        System.out.println("-------------------------------------------------");
+        for (Estudiante datos : EstudianteList) {
+            System.out.println(datos.mostrarInfo());
+        }
     }
 
     public static void main(String[] args) {
