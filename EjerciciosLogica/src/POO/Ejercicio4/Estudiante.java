@@ -35,4 +35,10 @@ public class Estudiante {
         this.carrera = carrera;
     }
 
+    public String mostrarInfo() {
+        return "Nombre: " + nombre + "\n"
+                + "Edad: " + edad + "\n" +
+                "Carrera: " + carrera + "\n";
+    }
+
 }
