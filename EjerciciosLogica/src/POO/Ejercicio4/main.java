@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class main {
     static ArrayList<Estudiante> EstudianteList = new ArrayList<>();
+    static Scanner input = new Scanner(System.in);
 
     public static void agregarEstudiante(ArrayList<Estudiante> EstudianteList, String nombre, int edad,
             String carrera) {
@@ -53,10 +54,13 @@ public class main {
         for (Estudiante dato : EstudianteList) {
             System.out.println(dato.mostrarInfo());
         }
+        input.close();
+        main(null);
+
     }
 
     public static void modificar() {
-        Scanner input = new Scanner(System.in);
+
         int index = 0;
         boolean continuar = true;
         System.out.println("Modificar Listas Estudiantes");
@@ -90,7 +94,6 @@ public class main {
     }
 
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
 
         System.out.println("------------------------------------------------");
         System.out.println("       Sistema De Registro De Estudiantes");
@@ -101,25 +104,19 @@ public class main {
         System.out.println("4 = Eliminar");
         System.out.println("5 = Salir");
         System.out.println("------------------------------------------------");
+        
         switch (input.nextLine()) {
-            case "1":
-                agregar();
-                break;
-            case "2":
-                modificar();
-                break;
-            case "3":
+            case "1" -> agregar();
+                
+                
+            case "2" -> modificar();
+                
 
-                break;
-            case "4":
-
-                break;
-
-            case "5":
-                System.out.println("Gracias Por Usar El Sistema");
-                break;
-            default:
-                System.out.println("Opcion No Valida");
+            case "5" -> System.out.println("Gracias Por Usar El Sistema"); 
+                
+                
+            default -> System.out.println("Opcion No Valida"); 
+                
 
         }
 
