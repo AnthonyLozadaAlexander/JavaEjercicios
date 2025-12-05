@@ -85,14 +85,15 @@ public class main {
                     continuar = false;
                     encontrado = true;
                     break;
-            }
+                }
 
-            if(!encontrado) {
-                System.out.println("--------------------------------------------------");
-                System.out.println("Estudiante No Encontrado");
-                System.out.println("--------------------------------------------------");
+                if (!encontrado) {
+                    System.out.println("--------------------------------------------------");
+                    System.out.println("Estudiante No Encontrado");
+                    System.out.println("--------------------------------------------------");
+                }
+
             }
-            
         } while (continuar == true);
         System.out.println("-------------------------------------------------");
         System.out.println("              Nombre Actualizado: ");
@@ -125,14 +126,17 @@ public class main {
                     index = i;
                     continuar = false;
                     encontrado = true;
-                    break;        
+                    break;
+                }
+
             }
-            
+
             if (!encontrado) {
                 System.out.println("--------------------------------------------------");
                 System.out.println("Estudiante No Encontrado");
                 System.out.println("--------------------------------------------------");
             }
+
         } while (continuar == true);
 
         System.out.println("-------------------------------------------------");
