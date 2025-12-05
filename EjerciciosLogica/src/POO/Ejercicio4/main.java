@@ -65,10 +65,14 @@ public class main {
 
         int index = 0;
         boolean continuar = true;
-        System.out.println("Modificar Listas Estudiantes");
+        System.out.println("-------------------------------------------------");
+        System.out.println("        Modificar Listas Estudiantes");
+        System.out.println("-------------------------------------------------\n");
 
         do {
+            System.out.println("-------------------------------------------------");
             System.out.println("Ingrese El Nombre Del Estudiante A Modificar: ");
+            System.out.println("-------------------------------------------------");
             String nombreBuscado = input.nextLine();
             for (int i = 0; i < EstudianteList.size(); i++) {
                 if (nombreBuscado.equals(EstudianteList.get(i).getNombre())) {
@@ -78,6 +82,10 @@ public class main {
                     String nuevoNombre = input.nextLine();
                     EstudianteList.get(index).setNombre(nuevoNombre);
                     continuar = false;
+                } else {
+                    System.out.println("-------------------------------------------------");
+                    System.out.println("Estudiante No Encontrado");
+                    System.out.println("-------------------------------------------------");
                 }
             }
 
@@ -98,15 +106,21 @@ public class main {
 
         int index = 0;
         boolean continuar = true;
-        System.out.println("Buscar Listas Estudiantes");
+        System.out.println("-------------------------------------------------");
+        System.out.println("            Buscar Listas Estudiantes");
+        System.out.println("-------------------------------------------------\n");
 
         do {
-            System.out.println("Ingrese El Nombre Del Estudiante A Buscar");
+            System.out.println("-------------------------------------------------");
+            System.out.println("   Ingrese El Nombre Del Estudiante A Buscar");
+            System.out.println("-------------------------------------------------");
             String nombreBuscado = input.nextLine();
             for (int i = 0; i < EstudianteList.size(); i++) {
                 if (nombreBuscado.equalsIgnoreCase(EstudianteList.get(i).getNombre())) {
                     index = i;
                     continuar = false;
+                } else {
+                    System.out.println("Estudiante No Encontrado");
                 }
             }
         } while (continuar == true);
