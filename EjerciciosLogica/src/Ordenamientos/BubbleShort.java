@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class BubbleShort {
 
-    public void ordenarList(ArrayList<Integer> lista) {
+    public static void ordenarList(ArrayList<Integer> lista) {
         int n = lista.size();
         for (int i = 0; i < n - 1; i++) { // bucle externo.
             for (int j = 0; j < n - i - 1; j++) { // Bucle interno
@@ -18,7 +18,11 @@ public class BubbleShort {
     }
 
     public static void main(String[] args) {
-
+        ArrayList<Integer> lista = new ArrayList<>();
+        lista.add(5);
+        lista.add(1);
+        lista.add(4);
+        ordenarList(lista);
     }
 
 }
