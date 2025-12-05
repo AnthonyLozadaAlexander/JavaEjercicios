@@ -3,13 +3,13 @@ package POO.Ejercicio4;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Main {
+public class main {
     static ArrayList<Estudiante> EstudianteList = new ArrayList<>();
 
-    public static void agregarEstudiante(ArrayList<Estudiante> listaEstudiantes, String nombre, int edad,
+    public static void agregarEstudiante(ArrayList<Estudiante> EstudianteList, String nombre, int edad,
             String carrera) {
         Estudiante nuevoEstudiante = new Estudiante(nombre, edad, carrera);
-        listaEstudiantes.add(nuevoEstudiante);
+        EstudianteList.add(nuevoEstudiante);
     }
 
     public static void agregar() {
@@ -59,9 +59,36 @@ public class Main {
     }
 
     public static void modificar() {
-        System.out.println("Modificar Listas Estudiantes");
+        Scanner input = new Scanner(System.in);
         int index = 0;
-        System.out.println("Ingrese El Indice Del Estudiante A Modificar");
+        boolean continuar = true;
+        System.out.println("Modificar Listas Estudiantes");
+        if (EstudianteList.isEmpty()) {
+            System.out.println("No Hay Estudiantes Registrados");
+            return;
+        }
+
+        do {
+            input.next();
+            System.out.println("Ingrese El Nombre Del Estudiante A Modificar: ");
+            String nombreBuscado = input.nextLine();
+            for (int i = 0; i < EstudianteList.size(); i++) {
+                if (nombreBuscado.equals(EstudianteList.get(i).getNombre())) {
+                    index = i;
+                    System.out.println("Estudiante Encontrado: " + EstudianteList.get(index).getNombre());
+                    System.out.println("Ingrese El Nuevo Nombre: ");
+                    String nuevoNombre = input.nextLine();
+                    EstudianteList.get(index).setNombre(nuevoNombre);
+                    continuar = false;
+                    break;
+                }
+            }
+
+        } while (continuar == true);
+        System.out.println("Nombre Actualizado: ");
+        System.out.println("Nombre: " + EstudianteList.get(index).getNombre());
+        input.close();
+
     }
 
     public static void main(String[] args) {
