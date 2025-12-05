@@ -106,10 +106,17 @@ public class main {
             for (int i = 0; i < EstudianteList.size(); i++) {
                 if (nombreBuscado.equalsIgnoreCase(EstudianteList.get(i).getNombre())) {
                     index = i;
-                    System.out.println("Estudiante Encontrado: ");
+                    continuar = false;
                 }
             }
         } while (continuar == true);
+
+        System.out.println("-------------------------------------------------");
+        System.out.println("              Estudiante Encontrado: ");
+        System.out.println("--------------------------------------------------");
+        System.out.println("Estudiante[" + index + "]");
+        System.out.println(EstudianteList.get(index).mostrarInfo() + "");
+        System.out.println("-------------------------------------------------");
     }
 
     public static void eliminar() {
