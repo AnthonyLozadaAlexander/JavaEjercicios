@@ -65,6 +65,7 @@ public class main {
 
         int index = 0;
         boolean continuar = true;
+        boolean encontrado = false;
         System.out.println("-------------------------------------------------");
         System.out.println("        Modificar Listas Estudiantes");
         System.out.println("-------------------------------------------------\n");
@@ -82,13 +83,16 @@ public class main {
                     String nuevoNombre = input.nextLine();
                     EstudianteList.get(index).setNombre(nuevoNombre);
                     continuar = false;
-                } else {
-                    System.out.println("-------------------------------------------------");
-                    System.out.println("Estudiante No Encontrado");
-                    System.out.println("-------------------------------------------------");
-                }
+                    encontrado = true;
+                    break;
             }
 
+            if(!encontrado) {
+                System.out.println("--------------------------------------------------");
+                System.out.println("Estudiante No Encontrado");
+                System.out.println("--------------------------------------------------");
+            }
+            
         } while (continuar == true);
         System.out.println("-------------------------------------------------");
         System.out.println("              Nombre Actualizado: ");
@@ -106,6 +110,7 @@ public class main {
 
         int index = 0;
         boolean continuar = true;
+        boolean encontrado = false;
         System.out.println("-------------------------------------------------");
         System.out.println("            Buscar Listas Estudiantes");
         System.out.println("-------------------------------------------------\n");
@@ -119,9 +124,14 @@ public class main {
                 if (nombreBuscado.equalsIgnoreCase(EstudianteList.get(i).getNombre())) {
                     index = i;
                     continuar = false;
-                } else {
-                    System.out.println("Estudiante No Encontrado");
-                }
+                    encontrado = true;
+                    break;        
+            }
+            
+            if (!encontrado) {
+                System.out.println("--------------------------------------------------");
+                System.out.println("Estudiante No Encontrado");
+                System.out.println("--------------------------------------------------");
             }
         } while (continuar == true);
 
@@ -141,26 +151,35 @@ public class main {
 
         int index = 0;
         boolean continuar = true;
+        boolean encontrado = false;
         System.out.println("-------------------------------------------------");
         System.out.println("           Eliminar Listas Estudiantes");
         System.out.println("-------------------------------------------------\n");
         do {
+
             System.out.println("-------------------------------------------------");
             System.out.println("   Ingrese El Nombre Del Estudiante A Eliminar");
             System.out.println("-------------------------------------------------");
             String nombreBuscado = input.nextLine();
+
             for (int i = 0; i < EstudianteList.size(); i++) {
                 if (nombreBuscado.equalsIgnoreCase(EstudianteList.get(i).getNombre())) {
                     index = i;
-                    System.out.println("Estudiante Eliminado: \n" +
+                    System.out.println("Estudiante Eliminado[" + index + "]" + "\n" +
                             EstudianteList.get(index).mostrarInfo());
                     EstudianteList.remove(index);
-                } else {
-                    System.out.println("-------------------------------------------------");
-                    System.out.println("Estudiante No Encontrado");
-                    System.out.println("-------------------------------------------------");
+                    encontrado = true;
+                    continuar = false;
+                    break;
                 }
             }
+
+            if (!encontrado) {
+                System.out.println("--------------------------------------------------");
+                System.out.println("Estudiante No Encontrado");
+                System.out.println("--------------------------------------------------");
+            }
+
         } while (continuar == true);
 
         System.out.println("-------------------------------------------------");
