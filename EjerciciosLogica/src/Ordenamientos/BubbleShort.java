@@ -26,11 +26,12 @@ public class BubbleShort {
         for (int dato : lista) {
             System.out.print(dato);
         }
+
         ordenarList(lista);
 
         System.out.println("\nLista Ordenada:");
         for (int dato : lista) {
-            System.out.println(dato);
+            System.out.print(dato);
         }
     }
 
