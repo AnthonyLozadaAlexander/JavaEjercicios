@@ -31,7 +31,7 @@ public class Negocio {
                     cantidadC = input.nextInt();
                     pagarC += precioU * cantidadC;
                     break;
-                    
+
                 case 2:
                     precioU = 7;
                     int cantidadCajas = 0;
