@@ -2,7 +2,7 @@ package Logica;
 
 public class PlusOneEx {
     public static void main(String[] args) {
-        int[] result = plusOne(new int[] { 2, 4 }); // Ingresa un array de enteros
+        int[] result = plusOne(new int[] { 1, 3 }); // Ingresa un array de enteros
         for (int digit : result)
             System.out.println(digit + " "); // Imprime el array de enteros
     }
