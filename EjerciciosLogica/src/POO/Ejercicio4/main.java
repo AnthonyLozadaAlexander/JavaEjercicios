@@ -180,7 +180,7 @@ public class main {
 
             if (!encontrado) {
                 System.out.println("--------------------------------------------------");
-                System.out.println("Estudiante No Encontrado");
+                System.out.println("           Estudiante No Encontrado");
                 System.out.println("--------------------------------------------------");
             }
 
