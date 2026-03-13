@@ -1,9 +1,23 @@
 package Excepciones;
 
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 public class Excepcion_1 {
     public static void main(String[] args) {
-        int num1 = 5, num2 = 0;
+        Scanner input = new Scanner(System.in);
 
-        int resultado = num1 / num2;
     }
+
+    public static int pedirNumero(Scanner input) {
+        System.out.println("Ingrese El Numero:");
+
+        try{
+            int num = input.nextInt();
+            return num;
+        }catch (InputMismatchException e){
+            System.out.println("Error: ");
+        }
+    }
+
 }
