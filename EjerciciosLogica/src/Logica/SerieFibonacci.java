@@ -20,7 +20,7 @@ public class SerieFibonacci {
         serie[1] = 1; // F1 = 1
         for (int i = 0; i < serie.length; i++) {
             if (i > 1) {
-                // Fn    =    Fn - 1    +    Fn - 2
+                // Fn = Fn - 1 + Fn - 2
                 serie[i] = serie[i - 1] + serie[i - 2];
             }
         }
