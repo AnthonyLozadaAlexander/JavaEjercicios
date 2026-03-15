@@ -5,10 +5,11 @@ import java.util.Scanner;
 public class SerieFibonacci {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        System.out.println("Bienvenido al programa de la serie de Fibonacci");
+        System.out.println("Bienvenido al programa de la secuencia de Fibonacci");
         System.out.println("Ingrese el limite de la serie de Fibonacci: ");
         int limite = input.nextInt();
 
+        calcularFibonacci(limite);
     }
 
     public static void calcularFibonacci(int limite) {
@@ -19,6 +20,15 @@ public class SerieFibonacci {
             if (i > 1) {
                 serie[i] = serie[i - 1] + serie[i - 2];
             }
+        }
+
+        imprimirSecuencia(serie);
+    }
+
+    public static void imprimirSecuencia(int[] serie) {
+        System.out.println("La secuencia es: ");
+        for (int i : serie) {
+            System.out.print(i + " ");
         }
     }
 
