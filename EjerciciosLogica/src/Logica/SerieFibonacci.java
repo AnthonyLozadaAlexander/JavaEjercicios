@@ -16,10 +16,11 @@ public class SerieFibonacci {
 
     public static void calcularFibonacci(int limite) {
         int[] serie = new int[limite];
-        serie[0] = 0;
-        serie[1] = 1;
+        serie[0] = 0; // F0 = 0
+        serie[1] = 1; // F1 = 1
         for (int i = 0; i < serie.length; i++) {
             if (i > 1) {
+                // Fn    =    Fn - 1    +    Fn - 2
                 serie[i] = serie[i - 1] + serie[i - 2];
             }
         }
