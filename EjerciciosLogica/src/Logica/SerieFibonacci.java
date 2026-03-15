@@ -10,6 +10,8 @@ public class SerieFibonacci {
         int limite = input.nextInt();
 
         calcularFibonacci(limite);
+
+        input.close();
     }
 
     public static void calcularFibonacci(int limite) {
